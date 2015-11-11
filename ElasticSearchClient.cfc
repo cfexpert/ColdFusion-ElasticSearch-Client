@@ -3,9 +3,9 @@ component accessors="true" extends="Base" {
 	
 	property name="OutputUtils";
 	property name="LoggingUtil";
-	property name="ClusterManager" type="ClusterManager";
+	property name="ClusterManager";
 
-	public ElasticSearchClient function init(required ClusterManager ClusterManager){
+	public ElasticSearchClient function init(required ClusterManager){
 		variables.ClusterManager = arguments.ClusterManager;
 		variables.OutputUtils = new OutputUtils();
 	 	return this;
@@ -30,19 +30,19 @@ component accessors="true" extends="Base" {
 	}
 
 	public IndexRequest function prepareIndex(string index="", string type="", string id=""){
-		var index = new requests.IndexRequest(ClusterManager=getClusterManager());
-			index.setIndex(arguments.index);
-			index.setType(arguments.type);
-			index.setId(arguments.id);
-		return index;
+		var retIndex = new requests.IndexRequest(ClusterManager=getClusterManager());
+			retIndex.setIndex(arguments.index);
+			retIndex.setType(arguments.type);
+			retIndex.setId(arguments.id);
+		return retIndex;
 	}
 	
 	public MappingRequest function prepareMapping(required string index, required string type, required elasticsearch.indexing.TypeMapping typeMapping){
-		var index = new requests.MappingRequest(ClusterManager=getClusterManager());
-			index.setIndex(arguments.index);
-			index.setType(arguments.type);
-			index.setBody(typeMapping.getJson());
-		return index;
+		var retIndex = new requests.MappingRequest(ClusterManager=getClusterManager());
+			retIndex.setIndex(arguments.index);
+			retIndex.setType(arguments.type);
+			retIndex.setBody(typeMapping.getJson());
+		return retIndex;
 	}
 
 	public BulkRequest function prepareBulk(boolean Transactional=false){
@@ -53,7 +53,7 @@ component accessors="true" extends="Base" {
 		return new requests.MultiGetRequest(ClusterManager=getClusterManager(), OutputUtils=getOutputUtils());
 	}
 
-	public GetRequest function prepareGet(string index="", string type="_all", string id=""){
+	public function prepareGet(string index="", string type="_all", string id=""){
 		var get = new requests.GetRequest(ClusterManager=getClusterManager());
 		get.setIndex(arguments.index);
 		get.setType(arguments.type);

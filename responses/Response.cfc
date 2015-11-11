@@ -14,11 +14,10 @@ component accessors="true" implements="IResponse"{
 	public void function handleResponse(){
 
 		var _httpResponse = arguments[1];
-		
-		setStatusCode(_httpResponse.status_code);
 		setStatus(_httpResponse.StatusCode);
 		setBody(deserializeJSON(_httpResponse.FileContent));
 		setHeaders(_httpResponse.responseHeader);
+		setStatusCode( getHeaders().status_code );
 
 		if(getStatusCode() <= 206 && getStatusCode() >= 200){
 			setSuccess(true);

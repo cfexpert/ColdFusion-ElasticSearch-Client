@@ -9,18 +9,18 @@ component accessors="true" {
 	property name="Routing" type="string";
 	property name="Preference" type="string";
 
-	property name="ClusterManager" type="ClusterManager";
+	property name="ClusterManager";
 
-	public GetRequest function init(required ClusterManager ClusterManager){
-		variables.ClusterManager = arguments.ClusterManager
+	public function init(required ClusterManager){
+		variables.ClusterManager = arguments.ClusterManager;
 		return this;
 	}
 
-	public GetResponse function execute(){
+	public function execute(){
 		var _url = "/#getIndex()#/#getType()#/#getId()#";
 
 		if(getSourceOnly()){
-			_url = _url & "/_source"
+			_url = _url & "/_source";
 		}
 
 		_url = _url & "?realtime=#getRealtime()#";
