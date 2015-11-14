@@ -7,12 +7,12 @@ component accessors="true" {
 
 	property name="ClusterManager" type="ClusterManager";
 
-	public GenericRequest function init(required ClusterManager ClusterManager){
-		variables.ClusterManager = arguments.ClusterManager
+	public function init(required ClusterManager){
+		variables.ClusterManager = arguments.ClusterManager;
 		return this;
 	}
 
-	public Response function execute(){
+	public function execute(){
 		return getClusterManager().doRequest(resource = getUri(),
 												method=getMethod(),
 												body=getBody(),

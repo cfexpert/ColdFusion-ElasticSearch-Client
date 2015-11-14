@@ -3,8 +3,6 @@
 **/
 component accessors="true" {
 
-	this.SEARCH_TYPES = "query_and_fetch,query_then_fetch,dfs_query_and_fetch,dfs_query_then_fetch,count,scan";
-
 	property name="Indexes" type="array";
 	property name="Types" type="array";
 	property name="SearchType" type="string" default="query_then_fetch";
@@ -17,6 +15,8 @@ component accessors="true" {
 	property name="Explain" type="boolean";
 
 	property name="ClusterManager" type="ClusterManager";
+
+	this.SEARCH_TYPES = "query_and_fetch,query_then_fetch,dfs_query_and_fetch,dfs_query_then_fetch,count,scan";
 
 	public SearchRequest function init(){
 		variables.Types = [];
@@ -82,7 +82,7 @@ component accessors="true" {
 	}
 
 
-	public SearchResponse function execute(){
+	public function execute(){
 		var urlIndexes = Len(getIndexes()[1]) > 0 ? ArrayToList(getIndexes()) & "/" : "";
 		var urlTypes = Len(getTypes()[1]) > 0 ? ArrayToList(getTypes()) & "/" : "";
 		

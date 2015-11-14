@@ -5,14 +5,14 @@ component accessors="true" {
 	property name="Id" type="string";
 	property name="Body" type="string";
 
-	property name="ClusterManager" type="ClusterManager";
+	property name="ClusterManager";
 
-	public IndexRequest function init(required ClusterManager ClusterManager){
-		variables.ClusterManager = arguments.ClusterManager
+	public function init(required ClusterManager){
+		variables.ClusterManager = arguments.ClusterManager;
 		return this;
 	}
 
-	public IndexResponse function execute(){
+	public function execute(){
 		return getClusterManager().doRequest(resource = "/#getIndex()#/#getType()#/#getId()#",
 												method="PUT",
 												body=getBody(),

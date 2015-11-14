@@ -7,7 +7,6 @@ component extends="Response" accessors="true" {
 	property name="TimedOut";
 	property name="SuccessfulShards";
 	property name="TotalShards";
-	property name="FailedShards";
 
 	public SearchResponse function init(){
 		setHits(new SearchHits());
@@ -41,10 +40,10 @@ component extends="Response" accessors="true" {
 											.setScore(getBody().hits.hits[h]["_score"])
 											.setSource(getBody().hits.hits[h]["_source"]);
 											
-				if(structKeyExists(getBody().hits.hits[h],"highlight"))
-					SearchHit.setHighlight(getBody().hits.hits[h]["highlight"])
-					
-				getHits().addHit(SearchHit);
+				if(structKeyExists(getBody().hits.hits[h],"highlight"))	{
+					SearchHit.setHighlight(getBody().hits.hits[h]["highlight"]);
+					getHits().addHit(SearchHit);
+				}
 			}
 		}
 	}
