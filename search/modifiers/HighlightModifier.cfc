@@ -2,7 +2,7 @@
 
 component accessors="true" extends="BaseModifier" implements="IModifier"{
 
-	property name="fields" type="array" default =[];
+	property name="fields" type="array" default ="";
 	property name="preTags" type="string" default ="";
 	property name="postTags" type="string" default ="";
 

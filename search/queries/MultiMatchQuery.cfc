@@ -55,7 +55,6 @@ component accessors="true" extends="BaseQuery" implements="IQuery"{
 		if(val(getMaxExpansions()) > 0){
 			json =  listAppend(json, '"max_expansions":#getMaxExpansions()#');
 		}
-
 		return '"multi_match":{#json#}';
 
 	}

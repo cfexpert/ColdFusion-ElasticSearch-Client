@@ -6,7 +6,7 @@ component accessors="true" {
 	property name="Indexes" type="array";
 	property name="Types" type="array";
 	property name="SearchType" type="string" default="query_then_fetch";
-	property name="Query" type="IQuery";
+	property name="Query";
 	property name="Filters" type="array";
 	property name="Modifiers" type="array";
 	property name="Facet" type="FacetBuilder";
@@ -87,7 +87,6 @@ component accessors="true" {
 		var urlTypes = Len(getTypes()[1]) > 0 ? ArrayToList(getTypes()) & "/" : "";
 		
 		var resource = urlIndexes & urlTypes & "_search?search_type=" & getSearchType();
-
 		return getClusterManager().doRequest(endpoint=getClusterManager().getEndPoint(),
 											  resource = resource,
 											  method="POST",

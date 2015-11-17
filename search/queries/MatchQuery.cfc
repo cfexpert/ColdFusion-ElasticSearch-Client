@@ -46,7 +46,7 @@ component accessors="true" extends="BaseQuery" implements="IQuery"{
 			case "match_phrase":
 				return '"match_phrase":{"#getField()#":{#json#}}';
 			break;
-			case "match_phrase":
+			case "match_phrase_prefix":
 				return '"match_phrase_prefix":{"#getField()#":{#json#}}';
 			break;
 			default:

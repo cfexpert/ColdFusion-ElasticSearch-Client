@@ -1,3 +1,3 @@
 interface{
-	public string function toString(){}
+	public string function toString();
 }

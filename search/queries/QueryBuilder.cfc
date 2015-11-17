@@ -12,7 +12,7 @@ component accessors="true" {
 		return this;
 	}
 
-	public function onMissingMethod(required string MissingMethodName, required array MissingMethodArguments){
+	public function onMissingMethod(required string MissingMethodName, required MissingMethodArguments){
 		if(findNoCase("query", arguments.MissingMethodName)){
 			local.query = createObject("component", "#arguments.MissingMethodName#").init(argumentCollection=MissingMethodArguments);
 			add(local.query);

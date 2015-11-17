@@ -12,11 +12,11 @@ component accessors="true" {
 		return this;
 	}
 	
-	public IFilter function buildFilter(required string MissingMethodName, required array MissingMethodArguments){
+	public IFilter function buildFilter(required string MissingMethodName, required MissingMethodArguments){
 		return onMissingMethod(MissingMethodName, MissingMethodArguments);
 	}
 
-	public function onMissingMethod(required string MissingMethodName, required array MissingMethodArguments){
+	public function onMissingMethod(required string MissingMethodName, required MissingMethodArguments){
 		if(findNoCase("filter", arguments.MissingMethodName)){
 			local.filter = createObject("component", "#arguments.MissingMethodName#").init(argumentCollection=MissingMethodArguments);
 			add(local.filter);

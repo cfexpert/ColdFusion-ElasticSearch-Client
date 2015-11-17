@@ -6,12 +6,12 @@ component accessors="true" {
 
 	property name="ClusterManager" type="ClusterManager";
 
-	public DeleteRequest function init(required ClusterManager ClusterManager){
-		variables.ClusterManager = arguments.ClusterManager
+	public DeleteRequest function init(required ClusterManager){
+		variables.ClusterManager = arguments.ClusterManager;
 		return this;
 	}
 
-	public Response function execute(){
+	public function execute(){
 		var _url = "#getIndex()#/";
 		
 		if(getType() != "")

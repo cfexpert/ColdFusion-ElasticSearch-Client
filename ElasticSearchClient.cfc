@@ -37,7 +37,7 @@ component accessors="true" extends="Base" {
 		return retIndex;
 	}
 	
-	public function prepareMapping(required string index, required string type, required elasticsearch.indexing.TypeMapping typeMapping){
+	public function prepareMapping(required string index, required string type, required typeMapping){
 		var retIndex = new requests.MappingRequest(ClusterManager=getClusterManager());
 			retIndex.setIndex(arguments.index);
 			retIndex.setType(arguments.type);
