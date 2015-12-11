@@ -12,7 +12,7 @@
 				<div class="modal-body">
 					<div class="bootstrap-dialog-body">
 						<div class="bootstrap-dialog-message">
-							<p><b>Ein Fehler ist aufgetreten!</b></p>
+							<p><b>An ERROR ocurred!</b></p>
 							<table class="table">
 								<tr>
 									<cfset errortime = now()>
@@ -46,15 +46,12 @@
 			</div>
 		</div>
 	</div>
-	<cfset variables.errorsubject = "Fehler in Applikation RAK">
+	<cfset variables.errorsubject = "Error in Elasticsearch Client Sample Application">
 	<cfset variables.mailBody = { action=erroraction, aerrortime=errortime, aexecutable=cgi.script_name, exception=request.exception, sess=session } >
 	<cfif findNoCase("localhost", CGI.HTTP_HOST) or getEnvironment() eq "dev">
 		<cfdump var="#mailbody#" label="Error">
 	<cfelse>	
-		<cfmail from="info@atginfotech.com" to="info@atginfotech.com" subject="#variables.errorsubject#" server="mail.ultimop.at" port="366" type="html">
-			<cfdump var="#mailbody#" label="Error">
-		</cfmail>	
-		<cfmail from="info@rgb.at" to="info@rgb.at" subject="#variables.errorsubject#" server="mail.rgb.at" type="html">
+		<cfmail from="error@somedomain.com" to="error@somedomain.com" subject="#variables.errorsubject#" server="mail.somedomain.com" port="366" type="html">
 			<cfdump var="#mailbody#" label="Error">
 		</cfmail>	
 	</cfif>

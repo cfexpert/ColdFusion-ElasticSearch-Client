@@ -238,4 +238,20 @@
 		return protocol;
 	}
 
+	public function getClusterHealthButtonColor( status ){
+		var buttonstyle = "btn-danger";
+		switch ( arguments.status ) {
+			case "green":
+				buttonstyle = " btn-success";
+				break;
+			case "yellow":
+				buttonstyle = " btn-warning";
+				break;
+			case "red":
+				buttonstyle = " btn-danger";
+				break;
+		}
+		return buttonstyle;
+	}
+
 }
