@@ -1,0 +1,260 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -40px;
+  /* Pad bottom by footer height */
+  padding: 0 0 40px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+	height: 40px;
+	background-color: #f5f5f5;
+	font-style: italic;
+}
+
+/* custom styles not required for sticky footer */
+#footer {
+  text-align: center;
+  padding: 8px;  
+}
+
+#preloader {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  /*background-color:#fff;*/ /* change if the mask should have another color then white */
+  background-color: rgba(255,255,255,0.5);
+  z-index:99; /* makes sure it stays on top */
+  }
+
+#preloaderstatus {
+  width:200px;
+  height:200px;
+  position:absolute;
+  left:50%; /* centers the loading animation horizontally one the screen */
+  top:50%; /* centers the loading animation vertically one the screen */
+  background-image:url(../images/loader.gif); /* path to your loading animation */
+  background-repeat:no-repeat;
+  background-position:center;
+  margin:-100px 0 0 -100px; /* is width and height divided by two */
+  }
+
+
+em,
+.highlight {
+	background-color: yellow;
+}
+
+/*bootstrap callout*/
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+.bs-callout code {
+    border-radius: 3px;
+}
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+.bs-callout-default {
+    border-left-color: #777;
+}
+.bs-callout-default h4 {
+    color: #777;
+}
+.bs-callout-primary {
+    border-left-color: #428bca;
+}
+.bs-callout-primary h4 {
+    color: #428bca;
+}
+.bs-callout-success {
+    border-left-color: #5cb85c;
+}
+.bs-callout-success h4 {
+    color: #5cb85c;
+}
+.bs-callout-danger {
+    border-left-color: #d9534f;
+}
+.bs-callout-danger h4 {
+    color: #d9534f;
+}
+.bs-callout-warning {
+    border-left-color: #f0ad4e;
+}
+.bs-callout-warning h4 {
+    color: #f0ad4e;
+}
+.bs-callout-info {
+    border-left-color: #5bc0de;
+}
+.bs-callout-info h4 {
+    color: #5bc0de;
+}
+
+.avatar {
+  position: relative;
+  display: block;
+  white-space: nowrap;
+  border-radius: 500px;
+}
+
+.avatar img {
+  width: 100%;
+  border-radius: 500px;
+}
+
+.avatar i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin: 2px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 100%;
+}
+
+.avatar i.right {
+  right: 0;
+  left: auto;
+}
+
+.avatar i.bottom {
+  top: auto;
+  right: 0;
+  bottom: 0;
+  left: auto;
+}
+
+.avatar i.left {
+  top: auto;
+  bottom: 0;
+}
+
+.avatar i.on {
+  background-color: #27c24c;
+}
+
+.avatar i.off {
+  background-color: #98a6ad;
+}
+
+.avatar i.busy {
+  background-color: #f05050;
+}
+
+.avatar i.away {
+  background-color: #fad733;
+}
+
+.avatar.thumb-md i {
+  width: 12px;
+  height: 12px;
+  margin: 3px;
+}
+
+.avatar.thumb-sm i {
+  margin: 1px;
+}
+
+.avatar.thumb-xs i {
+  margin: 0;
+}
+.thumb-xl {
+  display: inline-block;
+  width: 128px;
+}
+
+.thumb-lg {
+  display: inline-block;
+  width: 96px;
+}
+
+.thumb-md {
+  display: inline-block;
+  width: 64px;
+}
+
+.thumb {
+  display: inline-block;
+  width: 50px;
+}
+
+.thumb-sm {
+  display: inline-block;
+  width: 40px;
+}
+
+.thumb-xs {
+  display: inline-block;
+  width: 34px;
+}
+
+.thumb-xxs {
+  display: inline-block;
+  width: 30px;
+}
+
+.thumb-wrapper {
+  padding: 2px;
+  border: 1px solid #dee5e7;
+}
+
+.thumb img,
+.thumb-xs img,
+.thumb-sm img,
+.thumb-md img,
+.thumb-lg img,
+.thumb-btn img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+ .navbar-nav > li > a .avatar {
+    width: 35px;
+    margin-top: -5px;
+  }
+
+.m-t-n-sm {
+  margin-top: -10px;
+}
+.m-l-sm {
+  margin-left: 10px;
+}
+
+.m-b-n-sm {
+  margin-bottom: -10px;
+} 
+
+.b-white {
+  border-color: #ffffff;
+}
+

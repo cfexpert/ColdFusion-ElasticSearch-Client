@@ -1,3 +1,6 @@
 tests
 /*.sublime-project
 /*.sublime-workspace
+/examples/development
+/examples/build.number
+/examples/build.xml

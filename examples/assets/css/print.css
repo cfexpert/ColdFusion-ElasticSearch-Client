@@ -1,0 +1,27 @@
+body, 
+.container {
+	margin: 0;
+	padding: 0;
+}
+
+.noprint,
+.filterbar,
+.btn,
+.pagination,
+#footer {
+	display: none;
+}
+
+.table-responsive {
+	overflow: visible;
+}
+.control-label{
+	float: left;
+	width: 30%;
+}
+.form-control {
+	float: left;
+	border: 0;
+	width: 60%;
+}
+
