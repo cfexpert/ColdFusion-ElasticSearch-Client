@@ -78,7 +78,7 @@
 					
 				</div>
 				<div class="col-md-8">
-					CFML Elasticsearch Client &bull; #request.action# &bull; &copy; 2011 - #year(now())# &bull; Version: #this.appVersion# &bull; <a href="http://www.atginfotech.com" title="ATGInfotech" target="_blank">ATGInfotech</a><br />
+					CFML Elasticsearch Client &bull; #request.action# &bull; &copy; 2015 - #year(now())# &bull; Version: #this.appVersion# &bull; <a href="http://www.atginfotech.com" title="ATGInfotech" target="_blank">ATGInfotech</a><br />
 					Powered by <a href="https://github.com/framework-one/fw1" title="FW/1" target="_blank">FW/1</a> version #variables.framework.version# * <a href="https://github.com/framework-one/di1" title="DI/1" target="_blank">DI/1</a> version #getDefaultBeanFactory().getVersion()#. This request took #getTickCount() - rc.startTime#ms.
 				</div>
 				<div class="col-md-2">
