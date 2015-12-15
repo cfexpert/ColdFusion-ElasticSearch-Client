@@ -2,7 +2,7 @@
 	property pagination;
 
 	public void function setUpPagination( ){
-		pagination.init();
+		pagination.initPagination();
 		pagination.setShowNumericLinks( true );
 		pagination.setClassName("pagination");
 		pagination.setNextLinkHTML("&raquo;");

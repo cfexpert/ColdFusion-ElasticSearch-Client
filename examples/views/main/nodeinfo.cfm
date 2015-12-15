@@ -8,5 +8,5 @@
 	</div>
 	#view( "main/clusterbuttons" )#
 	<p>&nbsp;</p>
-	<cfdump var="#rc.data.getNodeInfo#">
+	<cfdump var="#rc.data.getStats#">
 </cfoutput>

@@ -28,6 +28,15 @@ component extends="framework.one" {
 		trace = false
 	};
 	
+
+	public void function setupApplication() {
+		var bf = getBeanFactory();
+		var esConfig = [ { host="localhost", port="9200", path="", secure=false, username="", password="" } ];
+		var clusterManager = new esclient.ClusterManager( esConfig );
+		bf.injectProperties( "es", { "clusterManager" = clusterManager } );
+	}
+
+
 	function setupRequest() {
 		// use setupRequest to do initialization per request
 		request.context.startTime = getTickCount();

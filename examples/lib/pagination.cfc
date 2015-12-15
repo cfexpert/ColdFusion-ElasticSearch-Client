@@ -87,7 +87,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 --->
 
-	<cffunction name="init" access="public" output="false" returntype="Pagination">
+	<cffunction name="initPagination" access="public" output="false" returntype="Pagination">
 
 		<!--- local storage defaults --->
 		<cfset variables.my = structNew() />

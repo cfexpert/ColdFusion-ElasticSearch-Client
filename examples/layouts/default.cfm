@@ -42,7 +42,9 @@
 							<cfelse>
 								<cfset avatarstatus = "off">
 							</cfif>
-							<li<cfif getSection() eq "main"> class="active"</cfif>><a href="#buildUrl( 'home:main.default' )#">Home</a></li>
+							<li<cfif getItem() eq "default"> class="active"</cfif>><a href="#buildUrl( 'main.default' )#">Home</a></li>
+							<li<cfif getItem() eq "clusterinfo"> class="active"</cfif>><a href="#buildUrl( 'main.clusterinfo' )#">Cluster</a></li>
+							<li<cfif getItem() eq "info"> class="active"</cfif>><a href="#buildUrl( 'main.nodeinfo' )#">Nodes</a></li>
 						</ul>
 						<!-- nabar right -->
 						<ul class="nav navbar-nav navbar-right">
