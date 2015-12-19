@@ -21,11 +21,11 @@ component extends="examples.lib.baseservice" accessors="true" {
 							.setTypes( doctype )
 							.setQuery( searchQuery )
 							.setModifiers( [ highlightModifier, sourceModifier ] )
-							.setFilters([])
+							.setFilters( [] )
 							.setFrom( 0 )
 							.setSize( 50 )
 							.execute();
-		return getResponse.getBody()["hits"];
+		return getResponse.getBody()[ "hits" ];
 	}
-	
+
 }
