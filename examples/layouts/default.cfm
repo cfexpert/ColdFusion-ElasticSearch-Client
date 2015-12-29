@@ -57,10 +57,10 @@
 								<ul class="dropdown-menu animated fadeInRight w">
 									<cfif session.auth.isLoggedIn>
 										<li>
-											<a href="#buildUrl( 'rakintern:login.logout' )#">Abmelden</a>
+											<a href="#buildUrl( 'login.logout' )#">Abmelden</a>
 										</li>
 									<cfelse>
-										<li><a href="#buildUrl( 'rakintern:login' )#">Anmelden</a></li>
+										<li><a href="#buildUrl( 'login' )#">Anmelden</a></li>
 									</cfif>
 								</ul>
 								<!-- / dropdown -->
@@ -127,7 +127,7 @@
 							var warningTimeout = Math.ceil( x / 60 * 100 ) / 100;
 							var warningMessage = "Die automatische Abmeldung erfolgt in weniger als " + warningTimeout + " Minuten.";
 							var buttonLabel = "<b>Nicht abmelden! Anmeldezeit verl&auml;ngern.</b>";
-							var keepAliveUrl = "#buildUrl( 'rakintern:keepalive' )#";
+							var keepAliveUrl = "#buildUrl( 'keepalive' )#";
 							BootstrapDialog.show({
 								title: "ACHTUNG",
 								buttons: [{
