@@ -3,6 +3,7 @@ component extends="framework.one" {
 	this.name = "elasticsearch_client_#hash( getCurrentTemplatePath() )#";
 	this.mappings[ "/examples" ] = getDirectoryFromPath( getCurrentTemplatePath() );
 	this.mappings["/framework"] = getDirectoryFromPath( getCurrentTemplatePath() ) & "framework";
+	this.mappings["/lib"] = getDirectoryFromPath( getCurrentTemplatePath() ) & "lib";
 	this.mappings[ "/esclient" ] = expandPath( "../" );
 	this.appDir = replace( getCurrentTemplatePath(), "\","/", "all" );
 	if ( left( this.appDir, 1 ) eq "/" ){

@@ -1,4 +1,4 @@
-component extends="examples.lib.baseservice" accessors="true" {
+component extends="lib.baseservice" accessors="true" {
 
  	public function init(){
 		return this;

@@ -4,7 +4,7 @@ component accessors="true" {
     property nodeService;
     property clusterService;
     property statsService;
-    property queryService;
+    property esQueryService;
 	
 	public any function init( fw ) {
 		variables.fw = fw;
@@ -16,7 +16,7 @@ component accessors="true" {
 		param name="rc.type" default="";
 		param name="rc.searchString" default="";
 		if ( len( trim( rc.searchString ) ) ){
-			rc.data.getResponse = queryService.sendQuery( rc.searchString, rc.index, rc.type  );
+			rc.data.getResponse = esQueryService.sendQuery( rc.searchString, rc.index, rc.type  );
 		} else {
 			rc.data.getResponse.hits = [];
 		}
