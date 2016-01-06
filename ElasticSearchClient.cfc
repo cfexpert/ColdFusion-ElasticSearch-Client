@@ -1,11 +1,13 @@
 component accessors="true" extends="Base" {
 
-	
+
 	property name="OutputUtils";
 	property name="LoggingUtil";
 	property name="ClusterManager";
+	property name="Version";
 
 	public function init(required ClusterManager){
+		setVersion( "0.7.0.b23351" );
 		variables.ClusterManager = arguments.ClusterManager;
 		variables.OutputUtils = new OutputUtils();
 	 	return this;
@@ -36,7 +38,7 @@ component accessors="true" extends="Base" {
 			retIndex.setId(arguments.id);
 		return retIndex;
 	}
-	
+
 	public function prepareMapping(required string index, required string type, required typeMapping){
 		var retIndex = new requests.MappingRequest(ClusterManager=getClusterManager());
 			retIndex.setIndex(arguments.index);
@@ -60,7 +62,7 @@ component accessors="true" extends="Base" {
 		get.setId(arguments.id);
 		return get;
 	}
-	
+
 	public function prepareDelete(required string index, string type="", string id=""){
 		var delete = new requests.DeleteRequest(ClusterManager=getClusterManager());
 		delete.setIndex(arguments.index);
@@ -68,7 +70,7 @@ component accessors="true" extends="Base" {
 		delete.setId(arguments.id);
 		return delete;
 	}
-	
+
 	public function prepareRequest(required string uri, required string method, required string body){
 		var genericRequest = new requests.GenericRequest(ClusterManager=getClusterManager());
 		genericRequest.setUri(arguments.uri);
@@ -76,5 +78,5 @@ component accessors="true" extends="Base" {
 		genericRequest.setBody(arguments.body);
 		return genericRequest;
 	}
-	
+
 }
